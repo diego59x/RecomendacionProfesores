@@ -6,8 +6,8 @@ public class Vista {
 
 	ArrayList<String> respuestas = new ArrayList<String>();
 	Scanner scan = new Scanner(System.in);
-	int contador = 0;
-	String preguntas = "\n";
+	String preguntas = "";
+	String claves = "";
 	public ArrayList<String> preguntas(){
 		File f = new File("Preguntas.txt");
 	   	BufferedReader entrada;
@@ -36,6 +36,19 @@ public class Vista {
 		for(int i = 0; i<respuestas.size(); i++){
 			System.out.println("Para la pregunta " + String.valueOf(i+1) + " respondiste: "  + respuestas.get(i));
 		}
+		File f = new File("Respuestas.txt");
+	   	BufferedReader entrada;
+	    try {
+	           entrada = new BufferedReader(new FileReader(f));
+	           while(entrada.ready()){
+	                claves += entrada.readLine() + "\n";
+	            }
+	    }catch (IOException e) {
+	            e.printStackTrace();
+		}
+		
+		System.out.println(claves);
+		
 	}
 
 }
