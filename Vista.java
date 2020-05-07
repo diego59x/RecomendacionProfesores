@@ -7,6 +7,7 @@ public class Vista {
 	ArrayList<String> respuestas = new ArrayList<String>();
 	Scanner scan = new Scanner(System.in);
 	String preguntas = "";
+	String clase = "";
 	String claves = "";
 	public ArrayList<String> preguntas(){
 		File f = new File("Preguntas.txt");
@@ -49,6 +50,16 @@ public class Vista {
 		
 		System.out.println(claves);
 		
+	}
+	public void bienvenida(){
+		System.out.println("************************************************************");
+		System.out.println("*                        Bienvenido                        *");
+		System.out.println("************************************************************");
+		System.out.println("*                  Se dara inicio al sistema               *");
+		System.out.println("*               de recomendacion de profesores             *");
+		System.out.println("* Ingresa la clase de la que te interesa tener un profesor *");
+		clase = scan.nextLine();
+		System.out.println("************************************************************");
 	}
 
 }

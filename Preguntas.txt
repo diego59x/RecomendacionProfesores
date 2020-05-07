@@ -8,3 +8,4 @@
 8. ¿Qué es lo que más disfrutas de una habitación?, a) Que sea silenciosa, b) Que sea confortable, c) Que esté limpia y ordenada,
 9. Si te ofrecieran uno de los siguientes empleos ¿cuál elegirías?, a) Director de una estación de radio, b) Director de un club deportivo, c) Director de una revista,
 10. ¿De qué manera te formas una opinión de otras personas?, a) Por la sinceridad en su voz, b) Por la forma de estrecharte la mano, c) Por su aspecto,
+11. ¿Con que profesores has estado? separelos por una coma,

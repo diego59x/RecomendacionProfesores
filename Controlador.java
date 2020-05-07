@@ -10,6 +10,9 @@ public class Controlador {
 		respuestas = vista.preguntas();
 		
 	}
+	public void inicio(){
+		vista.bienvenida();
+	}
 
 
 }
