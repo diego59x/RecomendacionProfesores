@@ -1,0 +1,336 @@
+CREATE 
+	(mdaguirre:Profesor{name:"AGUIRRE ILLESCAS DE VIDAL, MÓNICA DENISSE"}),
+    (ljaju:Profesor{name:"AJÚ TORRES, LUIS JAVIER"}),
+    (caalonso:Profesor{name:"ALONSO BONIFAZ, CARLOS AUGUSTO"}),
+    (plalonso:Profesor{name:"ALONSO LOPEZ, PEDRO LUIS"}),
+    (lfalvaradoa:Profesor{name:"ALVARADO ARROYO, LUIS FERNANDO"}),
+    (dsamezquita:Profesor{name:"AMEZQUITA MALDONADO, DOREN SUCELY"}),
+    (adelcaquino:Profesor{name:"AQUINO MATUS, ANA DEL CARMEN"}),
+    (learana:Profesor{name:"ARANA SINCAL, LUIS EDGAR"}),
+    (caarango:Profesor{name:"ARANGO ROSAL, CARLOS ALBERTO"}),
+    (largueta:Profesor{name:"ARGUETA MOGOLLON, LUIS LEONARDO"}),
+    (eaaristondo:Profesor{name:"ARISTONDO ARGUETA, EUGENIO ANTONIO"}),
+    (jaayala:Profesor{name:"AYALA LOPEZ, JULIO ANTONIO"}),
+    (lfayala:Profesor{name:"AYALA LÓPEZ, LUIS FELIPE"}),
+    (jrazurdia:Profesor{name:"AZURDIA DE LEÓN, JOSÉ ROGELIO"}),
+    (kmbarrera:Profesor{name:"BARRERA ALVAREZ, KIMBERLY MARISOL"}),
+    (ebarrera:Profesor{name:"BARRERA GARCIA-SALAS, ERNESTO"}),
+    (gabarrera:Profesor{name:"BARRERA NORIEGA, GUSTAVO ADOLFO"}),
+    (tbarrientos:Profesor{name:"BARRIENTOS QUEZADA, TOMAS JOSÉ"}),
+    (dlbarrios:Profesor{name:"BARRIOS GONZALEZ, DOUGLAS LEONEL"}),
+    (blbattz:Profesor{name:"BATTZ RAMÍREZ, BENJAMÍN LEVÍ"}),
+    (mberger:Profesor{name:"BERGER GONZÁLEZ DE WHITE, MÓNICA"}),
+    (jpblas:Profesor{name:"BLAS ARIAS, JUAN PABLO"}),
+    (jdbrincker:Profesor{name:"BRINCKER PALOMO, JACKELINE DARLENE"}),
+    (decacia:Profesor{name:"CACIÁ ALVAREZ, DANIEL ESTEBÁN"}),
+    (cbcaffaro:Profesor{name:"CAFFARO MOSQUERA DE BENVENUTO, CARLA BEATRIZ"}),
+    (auditivo:TeachingType{name:"Auditivo"}),
+    (cinestetico:TeachingType{name:"cinestetico"}),
+    (visual:TeachingType{name:"visual"}),
+    (CC2005:Course{name:"ALGORITMOS Y PROGRAMACION BASICA"}),
+    (CC3055:Course{name:"PROGRAMAC PLATAFORMAS MOV Y JUEGOS"}),
+    (CU169:Course{name:"PENSAMIENTO CUANTITATIVO"}),
+    (CU172:Course{name:"GUATEMALA EN EL CONTEXTO MUNDIAL"}),
+    (CU174:Course{name:"CIENCIAS DE LA VIDA"}),
+    (ED1008:Course{name:"ESTADISTICA INFERENCIAL"}),
+    (ED1012:Course{name:"METODOLOGIA DE LA INVESTIGACION CUANTITATIVA"}),
+    (ED1033:Course{name:"COACHING EDUCATIVO EN EL AULA 1"}),
+    (ED2016:Course{name:"EVALUACION ALTERNATIVA"}),
+    (ED2018:Course{name:"ESTRAT/APRENDIZAJE CON ENF ANDRAGOGICO"}),
+    (ET2003:Course{name:"BIOSEGURIDAD Y PRIMEROS AUXILIOS EN EL CAMPO"}),
+    (HL2106:Course{name:"HISTORIA DEL ESPAÑOL"}),
+    (IA2001:Course{name:"INT A LA INNOVACION Y LOS NEGOCIOS"}),
+    (IC2022:Course{name:"INTRODUCCION A LA INGENIERIA CIVIL"}),
+    (ID2002:Course{name:"INTRODUCCION A DATA SCIENCE"}),
+    (IM2013:Course{name:"DIBUJO CAD"}),
+    (LF2001:Course{name:"ESTADISTICA INFERENCIAL"}),
+    (LI2001:Course{name:"INTRO A INTERNAT MARKET AND BUSINESS ANALYTICS"}),
+    (QQ2017:Course{name:"QUIMICA 1"}),
+    (QQ2018:Course{name:"QUIMICA GENERAL"}),
+    (SA2027:Course{name:"COMPRENSIÓN DE LECTURAS EN CIENCIAS SOCIALES"}),
+    (SA3041:Course{name:"SALUD, CULTURA Y SOCIEDAD"}),
+    (SQ2015:Course{name:"INTRODUCCION A LA ARQUEOLOGIA"})
+
+CREATE (adelcaquino)-[tt1:TeachingType]->(Auditivo) 
+SET tt1.rating=0
+
+CREATE (adelcaquino)-[tt2:TeachingType]->(Cinestetico) 
+SET tt2.rating=0
+
+CREATE (adelcaquino)-[tt3:TeachingType]->(Visual) 
+SET tt3.rating=3
+
+CREATE (blbattz)-[tt4:TeachingType]->(Visual) 
+SET tt4.rating=6
+
+CREATE (blbattz)-[tt5:TeachingType]->(Cinestetico) 
+SET tt5.rating=9
+
+CREATE (blbattz)-[tt6:TeachingType]->(Auditivo) 
+SET tt6.rating=3
+
+CREATE (caalonso)-[tt7:TeachingType]->(Cinestetico) 
+SET tt7.rating=3
+
+CREATE (caalonso)-[tt8:TeachingType]->(Auditivo) 
+SET tt8.rating=2
+
+CREATE (caalonso)-[tt9:TeachingType]->(Visual) 
+SET tt9.rating=2
+
+CREATE (caarango)-[tt10:TeachingType]->(Visual) 
+SET tt10.rating=5
+
+CREATE (caarango)-[tt11:TeachingType]->(Auditivo) 
+SET tt11.rating=6
+
+CREATE (caarango)-[tt12:TeachingType]->(Cinestetico) 
+SET tt12.rating=2
+
+CREATE (cbcaffaro)-[tt13:TeachingType]->(Auditivo) 
+SET tt13.rating=1
+
+CREATE (cbcaffaro)-[tt14:TeachingType]->(Cinestetico) 
+SET tt14.rating=6
+
+CREATE (cbcaffaro)-[tt15:TeachingType]->(Visual) 
+SET tt15.rating=4
+
+CREATE (decacia)-[tt16:TeachingType]->(Visual) 
+SET tt16.rating=8
+
+CREATE (decacia)-[tt17:TeachingType]->(Cinestetico) 
+SET tt17.rating=5
+
+CREATE (decacia)-[tt18:TeachingType]->(Auditivo) 
+SET tt18.rating=5
+
+CREATE (dlbarrios)-[tt19:TeachingType]->(Auditivo) 
+SET tt19.rating=4
+
+CREATE (dlbarrios)-[tt20:TeachingType]->(Cinestetico) 
+SET tt20.rating=7
+
+CREATE (dlbarrios)-[tt21:TeachingType]->(Visual) 
+SET tt21.rating=3
+
+CREATE (dsamezquita)-[tt22:TeachingType]->(Cinestetico) 
+SET tt22.rating=4
+
+CREATE (dsamezquita)-[tt23:TeachingType]->(Visual) 
+SET tt23.rating=3
+
+CREATE (dsamezquita)-[tt24:TeachingType]->(Auditivo) 
+SET tt24.rating=4
+
+CREATE (eaaristondo)-[tt25:TeachingType]->(Auditivo) 
+SET tt25.rating=7
+
+CREATE (eaaristondo)-[tt26:TeachingType]->(Visual) 
+SET tt26.rating=0
+
+CREATE (eaaristondo)-[tt27:TeachingType]->(Cinestetico) 
+SET tt27.rating=3
+
+CREATE (ebarrera)-[tt28:TeachingType]->(Cinestetico) 
+SET tt28.rating=9
+
+CREATE (ebarrera)-[tt29:TeachingType]->(Visual) 
+SET tt29.rating=2
+
+CREATE (ebarrera)-[tt30:TeachingType]->(Auditivo) 
+SET tt30.rating=3
+
+CREATE (gabarrera)-[tt31:TeachingType]->(Auditivo) 
+SET tt31.rating=6
+
+CREATE (gabarrera)-[tt32:TeachingType]->(Visual) 
+SET tt32.rating=8
+
+CREATE (gabarrera)-[tt33:TeachingType]->(Cinestetico) 
+SET tt33.rating=9
+
+CREATE (jaayala)-[tt34:TeachingType]->(Cinestetico) 
+SET tt34.rating=9
+
+CREATE (jaayala)-[tt35:TeachingType]->(Visual) 
+SET tt35.rating=2
+
+CREATE (jaayala)-[tt36:TeachingType]->(Auditivo) 
+SET tt36.rating=7
+
+CREATE (jdbrincker)-[tt37:TeachingType]->(Auditivo) 
+SET tt37.rating=4
+
+CREATE (jdbrincker)-[tt38:TeachingType]->(Cinestetico) 
+SET tt38.rating=0
+
+CREATE (jdbrincker)-[tt39:TeachingType]->(Visual) 
+SET tt39.rating=9
+
+CREATE (jpblas)-[tt40:TeachingType]->(Visual) 
+SET tt40.rating=1
+
+CREATE (jpblas)-[tt41:TeachingType]->(Cinestetico) 
+SET tt41.rating=8
+
+CREATE (jpblas)-[tt42:TeachingType]->(Auditivo) 
+SET tt42.rating=6
+
+CREATE (jrazurdia)-[tt43:TeachingType]->(Auditivo) 
+SET tt43.rating=7
+
+CREATE (jrazurdia)-[tt44:TeachingType]->(Cinestetico) 
+SET tt44.rating=3
+
+CREATE (jrazurdia)-[tt45:TeachingType]->(Visual) 
+SET tt45.rating=3
+
+CREATE (kmbarrera)-[tt46:TeachingType]->(Visual) 
+SET tt46.rating=4
+
+CREATE (kmbarrera)-[tt47:TeachingType]->(Cinestetico) 
+SET tt47.rating=5
+
+CREATE (kmbarrera)-[tt48:TeachingType]->(Auditivo) 
+SET tt48.rating=8
+
+CREATE (largueta)-[tt49:TeachingType]->(Auditivo) 
+SET tt49.rating=0
+
+CREATE (largueta)-[tt50:TeachingType]->(Cinestetico) 
+SET tt50.rating=8
+
+CREATE (largueta)-[tt51:TeachingType]->(Visual) 
+SET tt51.rating=5
+
+CREATE (learana)-[tt52:TeachingType]->(Visual) 
+SET tt52.rating=2
+
+CREATE (learana)-[tt53:TeachingType]->(Cinestetico) 
+SET tt53.rating=3
+
+CREATE (learana)-[tt54:TeachingType]->(Auditivo) 
+SET tt54.rating=0
+
+CREATE (lfalvaradoa)-[tt55:TeachingType]->(Auditivo) 
+SET tt55.rating=0
+
+CREATE (lfalvaradoa)-[tt56:TeachingType]->(Cinestetico) 
+SET tt56.rating=5
+
+CREATE (lfalvaradoa)-[tt57:TeachingType]->(Visual) 
+SET tt57.rating=3
+
+CREATE (lfayala)-[tt58:TeachingType]->(Visual) 
+SET tt58.rating=0
+
+CREATE (lfayala)-[tt59:TeachingType]->(Cinestetico) 
+SET tt59.rating=4
+
+CREATE (lfayala)-[tt60:TeachingType]->(Auditivo) 
+SET tt60.rating=1
+
+CREATE (ljaju)-[tt61:TeachingType]->(Auditivo) 
+SET tt61.rating=1
+
+CREATE (ljaju)-[tt62:TeachingType]->(Cinestetico) 
+SET tt62.rating=9
+
+CREATE (ljaju)-[tt63:TeachingType]->(Visual) 
+SET tt63.rating=1
+
+CREATE (mberger)-[tt64:TeachingType]->(Cinestetico) 
+SET tt64.rating=7
+
+CREATE (mberger)-[tt65:TeachingType]->(Visual) 
+SET tt65.rating=7
+
+CREATE (mberger)-[tt66:TeachingType]->(Auditivo) 
+SET tt66.rating=9
+
+CREATE (mdaguirre)-[tt67:TeachingType]->(Cinestetico) 
+SET tt67.rating=2
+
+CREATE (mdaguirre)-[tt68:TeachingType]->(Auditivo) 
+SET tt68.rating=9
+
+CREATE (mdaguirre)-[tt69:TeachingType]->(Visual) 
+SET tt69.rating=9
+
+CREATE (plalonso)-[tt70:TeachingType]->(Visual) 
+SET tt70.rating=0
+
+CREATE (plalonso)-[tt71:TeachingType]->(Auditivo) 
+SET tt71.rating=9
+
+CREATE (plalonso)-[tt72:TeachingType]->(Cinestetico) 
+SET tt72.rating=4
+
+CREATE (tbarrientos)-[tt73:TeachingType]->(Auditivo) 
+SET tt73.rating=5
+
+CREATE (tbarrientos)-[tt74:TeachingType]->(Visual) 
+SET tt74.rating=9
+
+CREATE (tbarrientos)-[tt75:TeachingType]->(Cinestetico) 
+SET tt75.rating=4
+
+
+CREATE (adelcaquino)-[tf1:TeacherFor]->(ED1033)
+
+CREATE (blbattz)-[tf2:TeacherFor]->(ED1008)
+
+CREATE (caalonso)-[tf3:TeacherFor]->(CC2005)
+
+CREATE (caalonso)-[tf4:TeacherFor]->(CC3055)
+
+CREATE (caarango)-[tf5:TeacherFor]->(SA2027)
+
+CREATE (cbcaffaro)-[tf6:TeacherFor]->(QQ2017)
+
+CREATE (decacia)-[tf7:TeacherFor]->(ED2018)
+
+CREATE (dlbarrios)-[tf8:TeacherFor]->(CC2005)
+
+CREATE (dsamezquita)-[tf9:TeacherFor]->(QQ2018)
+
+CREATE (eaaristondo)-[tf10:TeacherFor]->(CU169)
+
+CREATE (ebarrera)-[tf11:TeacherFor]->(ET2003)
+
+CREATE (gabarrera)-[tf12:TeacherFor]->(IM2013)
+
+CREATE (jaayala)-[tf13:TeacherFor]->(CC2005)
+
+CREATE (jdbrincker)-[tf14:TeacherFor]->(CU174)
+
+CREATE (jpblas)-[tf15:TeacherFor]->(IC2022)
+
+CREATE (jrazurdia)-[tf16:TeacherFor]->(ED2016)
+
+CREATE (kmbarrera)-[tf17:TeacherFor]->(CC2005)
+
+CREATE (largueta)-[tf18:TeacherFor]->(ED1012)
+
+CREATE (largueta)-[tf19:TeacherFor]->(LF2001)
+
+CREATE (learana)-[tf20:TeacherFor]->(CU169)
+
+CREATE (lfalvaradoa)-[tf21:TeacherFor]->(CU169)
+
+CREATE (lfayala)-[tf22:TeacherFor]->(IA2001)
+
+CREATE (lfayala)-[tf23:TeacherFor]->(ID2002)
+
+CREATE (lfayala)-[tf24:TeacherFor]->(LI2001)
+
+CREATE (ljaju)-[tf25:TeacherFor]->(CU174)
+
+CREATE (mberger)-[tf26:TeacherFor]->(SA3041)
+
+CREATE (mdaguirre)-[tf27:TeacherFor]->(HL2106)
+
+CREATE (plalonso)-[tf28:TeacherFor]->(CU172)
+
+CREATE (tbarrientos)-[tf29:TeacherFor]->(SQ2015)
