@@ -1,2 +1,2 @@
-MATCH teachingTypes=()-[:TeachingTipe]-()
+MATCH teachingTypes=()-[:TeachingType]-()
 RETURN teachingTypes
