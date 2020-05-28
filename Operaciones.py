@@ -6,9 +6,21 @@
 # SECCION
 # Principal, menu de opciones
 
-import csv
-# Contadores de preguntas
+from neo4j import GraphDatabase
+uri = "bolt://localhost:7687"
 
+def inicio(self,uri):
+    self._driver = GraphDatabase.driver(uri, auth=("Profesores","12345"))
+    
+def close(self):
+    self._driver.close()
+    
+def mostrar(tx, teachingTypes):
+    for record in tx.run("MATCH teachingTypes=()-[TeachingType]-()"
+                         "RETURN teachingTypes",teachingTypes=teachingTypes):
+        print(record[teachingTypes])
+    
+# Contadores de preguntas
 
 def Profesores(datos):
     with open(datos) as a:
@@ -76,6 +88,7 @@ def ProfesorDesignado(profesores, aprendisaje, clase):
             nombres += coma[0] + ", "
     
     return nombres
+
     
     
 
