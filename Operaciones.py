@@ -1,31 +1,39 @@
-# Alejandro Corzo  
-# Paulina Perez    
-# El otro     
-# El otro x2  
-# FECHA : 20/10/2019
-# SECCION
-# Principal, menu de opciones
+#Pablo Reyna
 
-import csv
+from neo4j import GraphDatabase
+
+def inicio():
+    graph = GraphDatabase.driver(uri ="bolt://localhost:7687", auth = ("Profesores","12345"))
+    
+def close():
+    graph.close()
+    
+def mostrar():
+    session = graph.session()
+    ql = "MATCH teachingTypes=()-[:teachingTypes]-() RETURN(teachingTypes)"
+    nodos = session.run(ql)
+    for nodos in nodos:
+        print(nodos)
+        
+def mostrarProfesores():
+    session = graph.session()
+    ql = "MATCH teacherfor=()-[:TeacherFor]-() RETURN(teacherfor)"
+    nodos = session.run(ql)
+    for nodos in nodos:
+        print(nodos)
+
+#def mostrarRecomendaciones(Clase):
+#    if (clase == "Bioseguridad"):
+#        print("Ernesto Barrera")
+#    elif (clase == "Evaluacion"):
+#        print("Jose Azurdia")
+    
+#def eliminar():
+#    delete = graph.find_one()
+    
+#def crear():
+
 # Contadores de preguntas
-
-
-def Profesores(datos):
-    with open(datos) as a:
-        DatosCSV = a.read()
-    a.close()
-    contactos = DatosCSV.split("\n")
-    contactos.pop(0)
-    contactos.pop(len(contactos)-1)
-    
-    info = []
-    for i in contactos:
-        info.append(i.split(","))
-    return info
-
-    
-
-
 def Contador(num1, num2, num3, num4, num5, num6, num7, num8, num9, num10):
     # Se crea una lista con las respuestas del usuario y se convierten a enteros
     respuestas = [int(num1), int(num2), int(num3), int(num4), int(num5), int(num6), int(num7), int(num8), int(num9), int(num10)]
@@ -58,6 +66,7 @@ def Reporte(nom, clase, carnet, respuestas):
         tipo = "Hubo un problema, no se pudo calcular :/"
     datos = "+\t\tNombre: " + nom + "\n+\t\tClase en la que necesita ayuda: " + clase + "\n+\t\tCarnet: " + carnet + "\n+\t\tSu tipo de aprendisje es: " + tipo 
     return datos
+
 def ProfesorDesignado(profesores, aprendisaje, clase):
     
     if ((aprendisaje[0]>aprendisaje[1]) and (aprendisaje[0]>aprendisaje[2])):
@@ -76,6 +85,7 @@ def ProfesorDesignado(profesores, aprendisaje, clase):
             nombres += coma[0] + ", "
     
     return nombres
+
     
     
 
