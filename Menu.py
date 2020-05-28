@@ -1,25 +1,18 @@
-# Alejandro Corzo  
-# Paulina Perez    
-# El otro     
-# El otro x2  
-# FECHA : 20/10/2019
-# SECCION
-# Principal, menu de opciones
+#Pablo Reyna
 
+from neo4j import GraphDatabase
 from Operaciones import *
 from Defensiva import *
 
-# Listado de profesores
-Listado = Profesores("Listado.csv")
 # Banderas para las especificaciones
 BanderaPreguntas = True
 test = True
 
 # Datos
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-print("+\t\t   Bienvenido al test de aprendisaje                       +")
+print("+\t\t   Bienvenido al test de aprendizaje                       +")
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-print("+\t\tIngrese sus datos para empezar el test\t\t                   +")
+print("+\t\t Ingrese sus datos para empezar el test\t\t                 +")
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 Nombre = input("+\t\tFavor ingrese su nombre: ")
 Carnet = input("+\t\tFavor ingrese su carnet: ")
@@ -42,8 +35,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta1 = input("\t\t")
     while ((int(pregunta1) > 3) or (int(pregunta1) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta1 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta1 = input("\t\t")
     
         
         
@@ -56,8 +49,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta2 = input("\t\t")
     while ((int(pregunta2) > 3) or (int(pregunta2) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta2 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta2 = input("\t\t")
     
    
         
@@ -71,8 +64,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta3 = input("\t\t")
     while ((int(pregunta3) > 3) or (int(pregunta3) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta3 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta3 = input("\t\t")
     
         
     # Pregunta 4
@@ -84,8 +77,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta4 = input("\t\t")
     while ((int(pregunta4) > 3) or (int(pregunta4) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta4 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta4 = input("\t\t")
     
         
     # Pregunta 5
@@ -97,8 +90,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta5 = input("\t\t")
     while ((int(pregunta5) > 3) or (int(pregunta5) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta5 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta5 = input("\t\t")
    
         
     # Pregunta 6
@@ -110,8 +103,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta6 = input("\t\t")
     while ((int(pregunta6) > 3) or (int(pregunta6) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta6 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta6 = input("\t\t")
        
         
     # Pregunta 7
@@ -123,8 +116,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta7 = input("\t\t")
     while ((int(pregunta7) > 3) or (int(pregunta7) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta7 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta7 = input("\t\t")
             
     # Pregunta 8
     print("+\t\t¿Qué es lo que más disfrutas de una habitación? \n+\t\t 1. Que sea silenciosa \n+\t\t 2. Que sea confortable \n+\t\t 3. Que esté limpia y ordenada,")
@@ -135,8 +128,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta8 = input("\t\t")
     while ((int(pregunta8) > 3) or (int(pregunta8) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta8 = input("\t\t")        
+        print("+\t\tIngrese una opcion valida")
+        pregunta8 = input("\t\t")        
             
     # Pregunta 9
     print("+\t\tSi te ofrecieran uno de los siguientes empleos ¿cuál elegirías? \n+\t\t 1. Director de una estación de radio \n+\t\t 2. Director de un club deportivo \n+\t\t 3. Director de una revista")
@@ -147,8 +140,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta9 = input("\t\t")
     while ((int(pregunta9) > 3) or (int(pregunta9) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta9 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta9 = input("\t\t")
             
     # Pregunta 10
     print("+\t\t¿De qué manera te formas una opinión de otras personas? \n+\t\t 1. Por la sinceridad en su voz \n+\t\t 2. Por la forma de estrecharte la mano \n+\t\t 3. Por su aspecto")
@@ -159,8 +152,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta10 = input("\t\t")
     while ((int(pregunta10) > 3) or (int(pregunta10) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta10 = input("\t\t")
+        print("+\t\tIngrese una opcion valida")
+        pregunta10 = input("\t\t")
             
     # Pregunta 11
     print("+\t\t¿Con que profesores has estado? separelos por una coma,")
@@ -171,10 +164,8 @@ while (test == True):
         print("+\t\tIngrese numeros Porfavor")
         pregunta11 = input("\t\t")
     while ((int(pregunta11) > 3) or (int(pregunta11) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            pregunta11 = input("\t\t")
-            
-            
+        print("+\t\tIngrese una opcion valida")
+        pregunta11 = input("\t\t")
             
             
     # se mandan las preguntas al contador donde las segmenta y luego las recibe la grafica para mostrar su desempeño final
@@ -182,17 +173,25 @@ while (test == True):
     # Se manda la lista de las respuestas segmentadas y los datos del usuario para mostrar un mensaje final
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     print(Reporte(Nombre, Clase, Carnet, Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9 , pregunta10)))
-    print("+\t\tUsted se puede avocar con los profesores: ", ProfesorDesignado(Listado,Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7),Clase), "\n+")
+    print(mostrar)
+    #print("+\t\tUsted se puede avocar con los profesores: ", ProfesorDesignado(Listado,Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7),Clase), "\n+")
     print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-    terminar = input("\t\t¿Deseas realizar el test una vez mas o terminar? \n\t\t Ingrese 1 para continuar o 2 para salir ")
+    terminar = input("\t\t¿Deseas realizar el test una vez mas o terminar? \n\t\t Ingrese 1 para continuar,2 para agregar/eliminar nodos,3 para salir")
     while (Entero(terminar) == False):
         print("+\t\tIngrese numeros Porfavor")
         terminar = input("\t\t")
-    while ((int(terminar) > 2) or (int(terminar) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            terminar = input("\t\t")
+    while ((int(terminar) > 3) or (int(terminar) < 1 )):
+        print("+\t\tIngrese una opcion valida")
+        terminar = input("\t\t")
     if terminar == "1":
         test = True
+    elif terminar == "2":
+        opcion = input("Ingrese la opcion: \n 1.Agregar Nodos \n 2.Eliminar Nodos")
+        if (opcion == "1"):
+            print("Que nodo desea agregar: ()")
+        elif(opcion == "2"):
+            print("Que nodo desea eliminar: ")
+        else:
+            print("Ingrese una opcion valida")
     else:
         test = False
-    
