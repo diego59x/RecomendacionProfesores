@@ -1,0 +1,15 @@
+Luego de pasar las preguntas, se obtine que el tipo de aprendizaje es por ejemplo visual
+entonces eso va en una variable @variabletipoaprendizaje
+
+de la información que dio el estudiante en las preguntas tenemos otra variable en donde 
+va el nombre del curso por ejemplo @variablenombrecurso
+
+entonces ya se mandan a la función que puse como ejemplo en el archivo
+
+en neo4j pueden probar la consulta si quieren y es:
+
+MATCH (n:Professor)-[k:TeacherFor]->(c:Course)
+MATCH (p:Professor {name: n.name})-[r:TeachingType]-(t:TeachingType)
+WHERE t.name = 'visual' AND c.name = 'PENSAMIENTO CUANTITATIVO'
+RETURN r, p,t
+ORDER BY r.rating DESC

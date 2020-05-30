@@ -24,11 +24,11 @@ CREATE
     (jdbrincker:Professor{name:"BRINCKER PALOMO, JACKELINE DARLENE"}),
     (decacia:Professor{name:"CACIÁ ALVAREZ, DANIEL ESTEBÁN"}),
     (cbcaffaro:Professor{name:"CAFFARO MOSQUERA DE BENVENUTO, CARLA BEATRIZ"}),
-    (auditivo:TeachingType{name:"Auditivo"}),
+    (auditivo:TeachingType{name:"auditivo"}),
     (cinestetico:TeachingType{name:"cinestetico"}),
     (visual:TeachingType{name:"visual"}),
     (CC2005:Course{name:"ALGORITMOS Y PROGRAMACION BASICA"}),
-    (CC3055:Course{name:"PROGRAMAC PLATAFORMAS MOV Y JUEGOS"}),
+    (CC3055:Course{name:"PLATAFORMAS MOVILES Y JUEGOS"}),
     (CU169:Course{name:"PENSAMIENTO CUANTITATIVO"}),
     (CU172:Course{name:"GUATEMALA EN EL CONTEXTO MUNDIAL"}),
     (CU174:Course{name:"CIENCIAS DE LA VIDA"}),
@@ -36,7 +36,7 @@ CREATE
     (ED1012:Course{name:"METODOLOGIA DE LA INVESTIGACION CUANTITATIVA"}),
     (ED1033:Course{name:"COACHING EDUCATIVO EN EL AULA 1"}),
     (ED2016:Course{name:"EVALUACION ALTERNATIVA"}),
-    (ED2018:Course{name:"ESTRAT/APRENDIZAJE CON ENF ANDRAGOGICO"}),
+    (ED2018:Course{name:"APRENDIZAJE CON ENFOQUE ANDRAGOGICO"}),
     (ET2003:Course{name:"BIOSEGURIDAD Y PRIMEROS AUXILIOS EN EL CAMPO"}),
     (HL2106:Course{name:"HISTORIA DEL ESPAÑOL"}),
     (IA2001:Course{name:"INT A LA INNOVACION Y LOS NEGOCIOS"}),
@@ -44,236 +44,236 @@ CREATE
     (ID2002:Course{name:"INTRODUCCION A DATA SCIENCE"}),
     (IM2013:Course{name:"DIBUJO CAD"}),
     (LF2001:Course{name:"ESTADISTICA INFERENCIAL"}),
-    (LI2001:Course{name:"INTRO A INTERNAT MARKET AND BUSINESS ANALYTICS"}),
+    (LI2001:Course{name:"INTRODUCCION A MARKET AND BUSINESS ANALYTICS"}),
     (QQ2017:Course{name:"QUIMICA 1"}),
     (QQ2018:Course{name:"QUIMICA GENERAL"}),
     (SA2027:Course{name:"COMPRENSIÓN DE LECTURAS EN CIENCIAS SOCIALES"}),
     (SA3041:Course{name:"SALUD, CULTURA Y SOCIEDAD"}),
     (SQ2015:Course{name:"INTRODUCCION A LA ARQUEOLOGIA"})
 
-CREATE (adelcaquino)-[tt1:TeachingType]->(Auditivo) 
+CREATE (adelcaquino)-[tt1:TeachingType]->(auditivo) 
 SET tt1.rating=0
 
-CREATE (adelcaquino)-[tt2:TeachingType]->(Cinestetico) 
+CREATE (adelcaquino)-[tt2:TeachingType]->(cinestetico) 
 SET tt2.rating=0
 
-CREATE (adelcaquino)-[tt3:TeachingType]->(Visual) 
+CREATE (adelcaquino)-[tt3:TeachingType]->(visual) 
 SET tt3.rating=3
 
-CREATE (blbattz)-[tt4:TeachingType]->(Visual) 
+CREATE (blbattz)-[tt4:TeachingType]->(visual) 
 SET tt4.rating=6
 
-CREATE (blbattz)-[tt5:TeachingType]->(Cinestetico) 
+CREATE (blbattz)-[tt5:TeachingType]->(cinestetico) 
 SET tt5.rating=9
 
-CREATE (blbattz)-[tt6:TeachingType]->(Auditivo) 
+CREATE (blbattz)-[tt6:TeachingType]->(auditivo) 
 SET tt6.rating=3
 
-CREATE (caalonso)-[tt7:TeachingType]->(Cinestetico) 
+CREATE (caalonso)-[tt7:TeachingType]->(cinestetico) 
 SET tt7.rating=3
 
-CREATE (caalonso)-[tt8:TeachingType]->(Auditivo) 
+CREATE (caalonso)-[tt8:TeachingType]->(auditivo) 
 SET tt8.rating=2
 
-CREATE (caalonso)-[tt9:TeachingType]->(Visual) 
+CREATE (caalonso)-[tt9:TeachingType]->(visual) 
 SET tt9.rating=2
 
-CREATE (caarango)-[tt10:TeachingType]->(Visual) 
+CREATE (caarango)-[tt10:TeachingType]->(visual) 
 SET tt10.rating=5
 
-CREATE (caarango)-[tt11:TeachingType]->(Auditivo) 
+CREATE (caarango)-[tt11:TeachingType]->(auditivo) 
 SET tt11.rating=6
 
-CREATE (caarango)-[tt12:TeachingType]->(Cinestetico) 
+CREATE (caarango)-[tt12:TeachingType]->(cinestetico) 
 SET tt12.rating=2
 
-CREATE (cbcaffaro)-[tt13:TeachingType]->(Auditivo) 
+CREATE (cbcaffaro)-[tt13:TeachingType]->(auditivo) 
 SET tt13.rating=1
 
-CREATE (cbcaffaro)-[tt14:TeachingType]->(Cinestetico) 
+CREATE (cbcaffaro)-[tt14:TeachingType]->(cinestetico) 
 SET tt14.rating=6
 
-CREATE (cbcaffaro)-[tt15:TeachingType]->(Visual) 
+CREATE (cbcaffaro)-[tt15:TeachingType]->(visual) 
 SET tt15.rating=4
 
-CREATE (decacia)-[tt16:TeachingType]->(Visual) 
+CREATE (decacia)-[tt16:TeachingType]->(visual) 
 SET tt16.rating=8
 
-CREATE (decacia)-[tt17:TeachingType]->(Cinestetico) 
+CREATE (decacia)-[tt17:TeachingType]->(cinestetico) 
 SET tt17.rating=5
 
-CREATE (decacia)-[tt18:TeachingType]->(Auditivo) 
+CREATE (decacia)-[tt18:TeachingType]->(auditivo) 
 SET tt18.rating=5
 
-CREATE (dlbarrios)-[tt19:TeachingType]->(Auditivo) 
+CREATE (dlbarrios)-[tt19:TeachingType]->(auditivo) 
 SET tt19.rating=4
 
-CREATE (dlbarrios)-[tt20:TeachingType]->(Cinestetico) 
+CREATE (dlbarrios)-[tt20:TeachingType]->(cinestetico) 
 SET tt20.rating=7
 
-CREATE (dlbarrios)-[tt21:TeachingType]->(Visual) 
+CREATE (dlbarrios)-[tt21:TeachingType]->(visual) 
 SET tt21.rating=3
 
-CREATE (dsamezquita)-[tt22:TeachingType]->(Cinestetico) 
+CREATE (dsamezquita)-[tt22:TeachingType]->(cinestetico) 
 SET tt22.rating=4
 
-CREATE (dsamezquita)-[tt23:TeachingType]->(Visual) 
+CREATE (dsamezquita)-[tt23:TeachingType]->(visual) 
 SET tt23.rating=3
 
-CREATE (dsamezquita)-[tt24:TeachingType]->(Auditivo) 
+CREATE (dsamezquita)-[tt24:TeachingType]->(auditivo) 
 SET tt24.rating=4
 
-CREATE (eaaristondo)-[tt25:TeachingType]->(Auditivo) 
+CREATE (eaaristondo)-[tt25:TeachingType]->(auditivo) 
 SET tt25.rating=7
 
-CREATE (eaaristondo)-[tt26:TeachingType]->(Visual) 
+CREATE (eaaristondo)-[tt26:TeachingType]->(visual) 
 SET tt26.rating=0
 
-CREATE (eaaristondo)-[tt27:TeachingType]->(Cinestetico) 
+CREATE (eaaristondo)-[tt27:TeachingType]->(cinestetico) 
 SET tt27.rating=3
 
-CREATE (ebarrera)-[tt28:TeachingType]->(Cinestetico) 
+CREATE (ebarrera)-[tt28:TeachingType]->(cinestetico) 
 SET tt28.rating=9
 
-CREATE (ebarrera)-[tt29:TeachingType]->(Visual) 
+CREATE (ebarrera)-[tt29:TeachingType]->(visual) 
 SET tt29.rating=2
 
-CREATE (ebarrera)-[tt30:TeachingType]->(Auditivo) 
+CREATE (ebarrera)-[tt30:TeachingType]->(auditivo) 
 SET tt30.rating=3
 
-CREATE (gabarrera)-[tt31:TeachingType]->(Auditivo) 
+CREATE (gabarrera)-[tt31:TeachingType]->(auditivo) 
 SET tt31.rating=6
 
-CREATE (gabarrera)-[tt32:TeachingType]->(Visual) 
+CREATE (gabarrera)-[tt32:TeachingType]->(visual) 
 SET tt32.rating=8
 
-CREATE (gabarrera)-[tt33:TeachingType]->(Cinestetico) 
+CREATE (gabarrera)-[tt33:TeachingType]->(cinestetico) 
 SET tt33.rating=9
 
-CREATE (jaayala)-[tt34:TeachingType]->(Cinestetico) 
+CREATE (jaayala)-[tt34:TeachingType]->(cinestetico) 
 SET tt34.rating=9
 
-CREATE (jaayala)-[tt35:TeachingType]->(Visual) 
+CREATE (jaayala)-[tt35:TeachingType]->(visual) 
 SET tt35.rating=2
 
-CREATE (jaayala)-[tt36:TeachingType]->(Auditivo) 
+CREATE (jaayala)-[tt36:TeachingType]->(auditivo) 
 SET tt36.rating=7
 
-CREATE (jdbrincker)-[tt37:TeachingType]->(Auditivo) 
+CREATE (jdbrincker)-[tt37:TeachingType]->(auditivo) 
 SET tt37.rating=4
 
-CREATE (jdbrincker)-[tt38:TeachingType]->(Cinestetico) 
+CREATE (jdbrincker)-[tt38:TeachingType]->(cinestetico) 
 SET tt38.rating=0
 
-CREATE (jdbrincker)-[tt39:TeachingType]->(Visual) 
+CREATE (jdbrincker)-[tt39:TeachingType]->(visual) 
 SET tt39.rating=9
 
-CREATE (jpblas)-[tt40:TeachingType]->(Visual) 
+CREATE (jpblas)-[tt40:TeachingType]->(visual) 
 SET tt40.rating=1
 
-CREATE (jpblas)-[tt41:TeachingType]->(Cinestetico) 
+CREATE (jpblas)-[tt41:TeachingType]->(cinestetico) 
 SET tt41.rating=8
 
-CREATE (jpblas)-[tt42:TeachingType]->(Auditivo) 
+CREATE (jpblas)-[tt42:TeachingType]->(auditivo) 
 SET tt42.rating=6
 
-CREATE (jrazurdia)-[tt43:TeachingType]->(Auditivo) 
+CREATE (jrazurdia)-[tt43:TeachingType]->(auditivo) 
 SET tt43.rating=7
 
-CREATE (jrazurdia)-[tt44:TeachingType]->(Cinestetico) 
+CREATE (jrazurdia)-[tt44:TeachingType]->(cinestetico) 
 SET tt44.rating=3
 
-CREATE (jrazurdia)-[tt45:TeachingType]->(Visual) 
+CREATE (jrazurdia)-[tt45:TeachingType]->(visual) 
 SET tt45.rating=3
 
-CREATE (kmbarrera)-[tt46:TeachingType]->(Visual) 
+CREATE (kmbarrera)-[tt46:TeachingType]->(visual) 
 SET tt46.rating=4
 
-CREATE (kmbarrera)-[tt47:TeachingType]->(Cinestetico) 
+CREATE (kmbarrera)-[tt47:TeachingType]->(cinestetico) 
 SET tt47.rating=5
 
-CREATE (kmbarrera)-[tt48:TeachingType]->(Auditivo) 
+CREATE (kmbarrera)-[tt48:TeachingType]->(auditivo) 
 SET tt48.rating=8
 
-CREATE (largueta)-[tt49:TeachingType]->(Auditivo) 
+CREATE (largueta)-[tt49:TeachingType]->(auditivo) 
 SET tt49.rating=0
 
-CREATE (largueta)-[tt50:TeachingType]->(Cinestetico) 
+CREATE (largueta)-[tt50:TeachingType]->(cinestetico) 
 SET tt50.rating=8
 
-CREATE (largueta)-[tt51:TeachingType]->(Visual) 
+CREATE (largueta)-[tt51:TeachingType]->(visual) 
 SET tt51.rating=5
 
-CREATE (learana)-[tt52:TeachingType]->(Visual) 
+CREATE (learana)-[tt52:TeachingType]->(visual) 
 SET tt52.rating=2
 
-CREATE (learana)-[tt53:TeachingType]->(Cinestetico) 
+CREATE (learana)-[tt53:TeachingType]->(cinestetico) 
 SET tt53.rating=3
 
-CREATE (learana)-[tt54:TeachingType]->(Auditivo) 
+CREATE (learana)-[tt54:TeachingType]->(auditivo) 
 SET tt54.rating=0
 
-CREATE (lfalvaradoa)-[tt55:TeachingType]->(Auditivo) 
+CREATE (lfalvaradoa)-[tt55:TeachingType]->(auditivo) 
 SET tt55.rating=0
 
-CREATE (lfalvaradoa)-[tt56:TeachingType]->(Cinestetico) 
+CREATE (lfalvaradoa)-[tt56:TeachingType]->(cinestetico) 
 SET tt56.rating=5
 
-CREATE (lfalvaradoa)-[tt57:TeachingType]->(Visual) 
+CREATE (lfalvaradoa)-[tt57:TeachingType]->(visual) 
 SET tt57.rating=3
 
-CREATE (lfayala)-[tt58:TeachingType]->(Visual) 
+CREATE (lfayala)-[tt58:TeachingType]->(visual) 
 SET tt58.rating=0
 
-CREATE (lfayala)-[tt59:TeachingType]->(Cinestetico) 
+CREATE (lfayala)-[tt59:TeachingType]->(cinestetico) 
 SET tt59.rating=4
 
-CREATE (lfayala)-[tt60:TeachingType]->(Auditivo) 
+CREATE (lfayala)-[tt60:TeachingType]->(auditivo) 
 SET tt60.rating=1
 
-CREATE (ljaju)-[tt61:TeachingType]->(Auditivo) 
+CREATE (ljaju)-[tt61:TeachingType]->(auditivo) 
 SET tt61.rating=1
 
-CREATE (ljaju)-[tt62:TeachingType]->(Cinestetico) 
+CREATE (ljaju)-[tt62:TeachingType]->(cinestetico) 
 SET tt62.rating=9
 
-CREATE (ljaju)-[tt63:TeachingType]->(Visual) 
+CREATE (ljaju)-[tt63:TeachingType]->(visual) 
 SET tt63.rating=1
 
-CREATE (mberger)-[tt64:TeachingType]->(Cinestetico) 
+CREATE (mberger)-[tt64:TeachingType]->(cinestetico) 
 SET tt64.rating=7
 
-CREATE (mberger)-[tt65:TeachingType]->(Visual) 
+CREATE (mberger)-[tt65:TeachingType]->(visual) 
 SET tt65.rating=7
 
-CREATE (mberger)-[tt66:TeachingType]->(Auditivo) 
+CREATE (mberger)-[tt66:TeachingType]->(auditivo) 
 SET tt66.rating=9
 
-CREATE (mdaguirre)-[tt67:TeachingType]->(Cinestetico) 
+CREATE (mdaguirre)-[tt67:TeachingType]->(cinestetico) 
 SET tt67.rating=2
 
-CREATE (mdaguirre)-[tt68:TeachingType]->(Auditivo) 
+CREATE (mdaguirre)-[tt68:TeachingType]->(auditivo) 
 SET tt68.rating=9
 
-CREATE (mdaguirre)-[tt69:TeachingType]->(Visual) 
+CREATE (mdaguirre)-[tt69:TeachingType]->(visual) 
 SET tt69.rating=9
 
-CREATE (plalonso)-[tt70:TeachingType]->(Visual) 
+CREATE (plalonso)-[tt70:TeachingType]->(visual) 
 SET tt70.rating=0
 
-CREATE (plalonso)-[tt71:TeachingType]->(Auditivo) 
+CREATE (plalonso)-[tt71:TeachingType]->(auditivo) 
 SET tt71.rating=9
 
-CREATE (plalonso)-[tt72:TeachingType]->(Cinestetico) 
+CREATE (plalonso)-[tt72:TeachingType]->(cinestetico) 
 SET tt72.rating=4
 
-CREATE (tbarrientos)-[tt73:TeachingType]->(Auditivo) 
+CREATE (tbarrientos)-[tt73:TeachingType]->(auditivo) 
 SET tt73.rating=5
 
-CREATE (tbarrientos)-[tt74:TeachingType]->(Visual) 
+CREATE (tbarrientos)-[tt74:TeachingType]->(visual) 
 SET tt74.rating=9
 
-CREATE (tbarrientos)-[tt75:TeachingType]->(Cinestetico) 
+CREATE (tbarrientos)-[tt75:TeachingType]->(cinestetico) 
 SET tt75.rating=4
 
 
