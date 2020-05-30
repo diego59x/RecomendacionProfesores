@@ -1,7 +1,7 @@
 from neo4j import GraphDatabase
 
-uri = "bolt://localhost:7687"
-driver = GraphDatabase.driver(uri, auth=("neo4j", "123456"))
+
+driver = GraphDatabase.driver("bolt://localhost:7687", auth=("neo4j", "123456"), encrypted = False)
 
 def recomendacion(tx, tt, cu):
     for record in tx.run(" MATCH (n:Professor)-[k:TeacherFor]->(c:Course) "

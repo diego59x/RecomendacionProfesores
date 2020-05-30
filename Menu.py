@@ -3,7 +3,7 @@
 from neo4j import GraphDatabase
 from Operaciones import *
 from Defensiva import *
-from testcnn import *
+#from testcnn import *
 
 # Banderas para las especificaciones
 BanderaPreguntas = True
