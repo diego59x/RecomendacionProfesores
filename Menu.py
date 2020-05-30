@@ -3,11 +3,12 @@
 from neo4j import GraphDatabase
 from Operaciones import *
 from Defensiva import *
+from testcnn import *
 
 # Banderas para las especificaciones
 BanderaPreguntas = True
 test = True
-grafo = {'Clase':{'Quimica 1':'Carla Beatriz Caffaro','Quimica General':'Doren Sucely Amezquita','Pensamiento':['Eugenio Antonio Aristondo','Luis Fernando Alvaro','Luis Edgar Arana'],}}
+
 
 # Datos
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -162,7 +163,8 @@ while(test):
         # Se manda la lista de las respuestas segmentadas y los datos del usuario para mostrar un mensaje final
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         print(Reporte(Nombre, Clase, Carnet, Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9 , pregunta10)))
-        #print("+\t\tUsted se puede avocar con los profesores: ", ProfesorDesignado(Listado,Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7),Clase), "\n+")
+        print(recomendacion(tx,tipo,clase))
+        print(mostrarProfesores)
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
     elif (opcion == "2"):
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -188,24 +190,29 @@ while(test):
             opcion = input("\t\t")
         if(opcion == "1"):
             profesor = input("\t\t Ingresa el nombre del profesor:\n")
+            eliminar_pro = driver.find_one("User","name", profesor)
+            eliminar_pro.delete()
         elif(opcion == "2"):
             clase = input("\t\t Ingresa el nombre del curso:\n")
+            eliminar_clase = driver.find_one("user","name", clase)
+            eliminar_clase.delete()
         
     elif (opcion == "4"):
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print("+\t\t ¿Desea eliminar un \n 1. Profesor \n 2. Clase?")
+        print("+\t\t ¿Desea agregar un \n 1. Profesor \n 2. Clase?")
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         # Verificar si no esta y luego que se venga papi jajaja
         opcion = input("\t\t")
-        
         
         while ((int(opcion) > 2) or (int(opcion) < 1 )):
             print("+\t\tIngrese una opcion valida")
             opcion = input("\t\t")
         if(opcion == "1"):
             profesor = input("\t\t Ingresa el nombre del profesor:\n")
+            print(create_person(driver,profesor))
         elif(opcion == "2"):
             clase = input("\t\t Ingresa el nombre del curso:\n")
+            print(create_person(driver,clase))
         
         
     elif (opcion == "5"):

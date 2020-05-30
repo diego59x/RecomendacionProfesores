@@ -3,35 +3,30 @@
 from neo4j import GraphDatabase
 
 def inicio():
-    graph = GraphDatabase.driver(uri ="bolt://localhost:7687", auth = ("Profesores","12345"))
+    driver = GraphDatabase.driver(uri ="bolt://localhost:7687", auth = ("neo4j","123456"))
     
 def close():
-    graph.close()
+    driver.close()
     
 def mostrar():
-    session = graph.session()
+    session = driver.session()
     ql = "MATCH teachingTypes=()-[:teachingTypes]-() RETURN(teachingTypes)"
     nodos = session.run(ql)
     for nodos in nodos:
         print(nodos)
         
 def mostrarProfesores():
-    session = graph.session()
+    session = driver.session()
     ql = "MATCH teacherfor=()-[:TeacherFor]-() RETURN(teacherfor)"
     nodos = session.run(ql)
     for nodos in nodos:
         print(nodos)
+        
+def create_person(driver, name):
+    with driver.session() as session:
+        return session.run("CREATE (a:Person {name:$name}) "
+                           "RETURN id(a)", name=name).single().value()
 
-#def mostrarRecomendaciones(Clase):
-#    if (clase == "Bioseguridad"):
-#        print("Ernesto Barrera")
-#    elif (clase == "Evaluacion"):
-#        print("Jose Azurdia")
-    
-#def eliminar():
-#    delete = graph.find_one()
-    
-#def crear():
 
 # Contadores de preguntas
 def Contador(num1, num2, num3, num4, num5, num6, num7, num8, num9, num10):
