@@ -64,7 +64,7 @@ def Reporte(nom, clase, carnet, respuestas):
         tipo = "Cinestesico"
     else:
         tipo = "Hubo un problema, no se pudo calcular :/"
-    datos = "+\t\tNombre: " + nom + "\n+\t\tClase en la que necesita ayuda: " + clase + "\n+\t\tCarnet: " + carnet + "\n+\t\tSu tipo de aprendisje es: " + tipo 
+    datos = "+\t\tNombre: " + nom + "\n+\t\tClase en la que necesita ayuda: " + clase + "\n+\t\tCarnet: " + carnet + "\n+\t\tSu tipo de aprendisje es: " + tipo + " los profesores a los que se puede avocar son Amalia, Aristondo"
     return datos
 
 def ProfesorDesignado(profesores, aprendisaje, clase):
