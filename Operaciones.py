@@ -1,33 +1,66 @@
-#Pablo Reyna
-
+# Pablo Reyna 10% del trabajo
+# Cesar vinicio 20% del trabajo
+# Diego Alvaarez 70% del trabajo
 from neo4j import GraphDatabase
 
 def inicio():
-    driver = GraphDatabase.driver(uri ="bolt://localhost:7687", auth = ("neo4j","123456"), encrypted = False)
+    db = GraphDatabase.driver("bolt://localhost:7687", auth = ("neo4j","1234"), encrypted = False)
+    return db
+def close(db):
+    db.close()
     
-def close():
-    driver.close()
+  
+def mostrarProfesores(db):
+    profesores = []
+    nombre = "Professor"
+    session = db.session()
+    ql = "MATCH (x:%s) RETURN x"%nombre
+    nodos = session.run(ql)
+    nodos = list(nodos)
     
-def mostrar():
-    session = driver.session()
-    ql = "MATCH teachingTypes=()-[:teachingTypes]-() RETURN(teachingTypes)"
-    nodos = session.run(ql)
-    for nodos in nodos:
-        print(nodos)
-        
-def mostrarProfesores():
-    session = driver.session()
-    ql = "MATCH teacherfor=()-[:TeacherFor]-() RETURN(teacherfor)"
-    nodos = session.run(ql)
-    for nodos in nodos:
-        print(nodos)
-        
-def create_person(driver, name):
-    with driver.session() as session:
-        return session.run("CREATE (a:Person {name:$name}) "
-                           "RETURN id(a)", name=name).single().value()
+    try:
+        for profesor in nodos:
+            profesores.append(dict(dict(profesor)['x'])['name'])
+    except:
+        for profesor in nodos:
+            profesores.append(dict(dict(profesor)['x'])['nombre'])
+    return profesores
+def borrar(db,profesor,clase,aprendizaje):
+    session = db.session()
+    eliminarClase = """MATCH (a:Profesor), (b:Clase)
+    WHERE a.nombre = '%s' AND b.name = '%s' 
+    DELETE a, b """%(profesor, clase)
+    
+    eliminarAprendizaje = """MATCH (a:Profesor), (b:Aprendizaje)
+    WHERE a.nombre = '%s' AND b.name = '%s' 
+    DELETE a, b """%(profesor, aprendizaje)
+    
+    session.run(eliminarClase)
+    session.run(eliminarAprendizaje)
 
+def crear(db,profesor,clase,aprendizaje):
+    session = db.session()
+    Create_1 = """Create(%s:Profesor {nombre:"%s"})
+    CREATE (%s:Clase {nombre: %s})
+    CREATE (%s)-[:TeacherFor]->(%s)
+    CREATE (%s:Aprendizaje {nombre: %s})
+    CREATE (%s)-[:TeachingType]->(%s)
+    """%(profesor,profesor,clase,clase, profesor, clase, aprendizaje, aprendizaje, profesor, aprendizaje)
+    
+    Clase = """MATCH (a:Profesor), (b:Clase)
+    WHERE a.nombre = '%s' AND b.name = '%s'
+    CREATE (a)-[:TeacherFor]->(b)
 
+    """%(profesor,clase)
+     
+    Clase1 = """MATCH (a:Profesor), (b:Aprendizaje)
+    WHERE a.nombre = '%s' AND b.name = '%s'
+    CREATE (a)-[:TeachingType]->(b)
+
+    """%(profesor,aprendizaje)
+    session.run(Clase)
+    session.run(Clase1)
+ 
 # Contadores de preguntas
 def Contador(num1, num2, num3, num4, num5, num6, num7, num8, num9, num10):
     # Se crea una lista con las respuestas del usuario y se convierten a enteros
@@ -59,36 +92,21 @@ def Reporte(nom, clase, carnet, respuestas):
         tipo = "Cinestesico"
     else:
         tipo = "Hubo un problema, no se pudo calcular :/"
-    datos = "+\t\tNombre: " + nom + "\n+\t\tClase en la que necesita ayuda: " + clase + "\n+\t\tCarnet: " + carnet + "\n+\t\tSu tipo de aprendisje es: " + tipo + " los profesores a los que se puede avocar son Amalia, Aristondo"
+    datos = []
+    datos.append("+\t\tNombre: " + nom + "\n+\t\tClase en la que necesita ayuda: " + clase + "\n+\t\tCarnet: " + carnet + "\n+\t\tSu tipo de aprendisje es: " + tipo)
+    datos.append(tipo)
     return datos
 
-def ProfesorDesignado(profesores, aprendisaje, clase):
-    
-    if ((aprendisaje[0]>aprendisaje[1]) and (aprendisaje[0]>aprendisaje[2])):
-        tipo = "Visual"
-    elif ((aprendisaje[1]>aprendisaje[0]) and (aprendisaje[1]>aprendisaje[2])):
-        tipo = "Auditivo"
-    elif ((aprendisaje[2]>aprendisaje[0]) and (aprendisaje[2]>aprendisaje[1])):
-        tipo = "Cinestesico"
-    else:
-        tipo = "Hubo un problema, no se pudo calcular :/"
 
-    nombres = ""
-    tipoAprendisaje = 2
-    for coma in profesores:
-        if tipo == coma[2] and clase == coma[1]:
-            nombres += coma[0] + ", "
-    
-    return nombres
-def recomendacion(tx, tt, cu):
-    for record in tx.run(" MATCH (n:Professor)-[k:TeacherFor]->(c:Course) "
+def recomendacion(db, tt, cu):
+    session = db.session()
+    for record in session.run(" MATCH (n:Professor)-[k:TeacherFor]->(c:Course) "
                          " MATCH (p:Professor {name: n.name})-[r:TeachingType]-(t:TeachingType) "
-                         " WHERE t.name = {variabletipoaprendizaje} AND c.name ={variablenombrecurso}"
+                         " WHERE t.name = $variabletipoaprendizaje AND c.name = $variablenombrecurso"
                          " RETURN r, p,t "
                          " ORDER BY r.rating DESC ", variabletipoaprendizaje=tt, variablenombrecurso = cu  ):
         print(record["r, p,t "])
 
-    
     
 
 

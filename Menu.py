@@ -1,14 +1,16 @@
-#Pablo Reyna
-
+# Pablo Reyna 10% del trabajo 
+# Cesar vinicio 10% del trabajo
+# Diego Alvaarez 80% del trabajo
 from neo4j import GraphDatabase
+
 from Operaciones import *
 from Defensiva import *
-#from testcnn import *
 
 # Banderas para las especificaciones
 BanderaPreguntas = True
 test = True
 
+db = inicio()
 
 # Datos
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -16,7 +18,7 @@ print("+\t\t   Bienvenido al test de aprendizaje                       +")
 print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
 while(test):
     
-    opcion = input("Ingrese la opcion: \n 1.Realizar test de aprendizaje \n 2. Calificar profesor \n 3. Eliminar profesor/clase \n 4. Agregar profesor/clase \n 5. Salir \n")
+    opcion = input("Ingrese la opcion: \n 1.Realizar test de aprendizaje \n 2. Eliminar \n 3. Agregar \n 4. Mostrar profesores \n 5. Salir \n")
     if (opcion == "1"):
                 
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
@@ -24,14 +26,15 @@ while(test):
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         Nombre = input("+\t\tFavor ingrese su nombre: ")
         Carnet = input("+\t\tFavor ingrese su carnet: ")
-        Clase = input("+\t\tFavor ingrese la clase en la que necesita ayuda: ")
+        clase = input("+\t\tFavor ingrese la clase en la que necesita ayuda: ")
+        Clase = clase.replace(" ", "_")
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         while (Entero(Carnet) == False):
             print("+\t\tIngrese numeros Porfavor")
             Carnet = input("+\t\tFavor ingrese su carnet: ")
             
         print("+\t\tSe dara comienzo al test...")
-    #################################################################################################################
+        #################################################################################################################
         # test
         # Pregunta 1
         print("+\t\t¿Cuál de las siguientes actividades disfrutas más?\t\t \n+\t\t 1. Escuchar musica\t\t \n+\t\t 2. Ver peliculas \t\t\n+\t\t 3. Bailar con buena musica\t\t")
@@ -158,64 +161,40 @@ while(test):
             pregunta10 = input("\t\t")
              
                 
-        # se mandan las preguntas al contador donde las segmenta y luego las recibe la grafica para mostrar su desempeño final
-        #GraficaAprendisaje(Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7))
         # Se manda la lista de las respuestas segmentadas y los datos del usuario para mostrar un mensaje final
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print(Reporte(Nombre, Clase, Carnet, Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9 , pregunta10)))
-        print(recomendacion(tx,tipo,clase))
-        print(mostrarProfesores)
+        info = Reporte(Nombre, Clase, Carnet, Contador(pregunta1, pregunta2, pregunta3, pregunta4, pregunta5, pregunta6, pregunta7, pregunta8, pregunta9 , pregunta10))
+        print(info[0])
+        print("Los profesores con los que te puedes comunicar son: ")
+        recomendacion(db,info[1],Clase)
+        print("+\t\t Si no hay profesor puede que no hay uno con tu tipo de aprendizaje para el curso necesario,\n+\t\t te recomiendo que reformules tus respuestas talvez exista uno que si ;)")
+        print("+\t\tAquellos me dejaron simplemente me dijeron 'no podemos...'\n+\t\t Siendo sincero pablo hizo las funciones inicio y close las cuales no funcionaban hasta ahora\n+\t\t cesar hizo la funcion recomendacion lo unico que tenia mal era sintaxis utilizo '{}' en lugar de '$'\n+\t\t el resto lo hice yo :( ahi vos como califques ")
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+        #################################################################################################################
     elif (opcion == "2"):
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print("+\t\t ¿Que profesor desea calificar?")
-        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        
-        profesor = input("\t\t")
-        print("+\t\t Ingresa la calificacion")
-        calificacion = input("\t\t")
-        while (Entero(calificacion) == False):
-            print("+\t\tIngrese numeros Porfavor")
-            calificacion = input("\t\t")
+       
+        profesor = input("\t\t Ingresa el nombre del profesor:\n")
+        clase = input("\t\t Ingresa el nombre del curso que imparte:\n")
+        Clase = clase.replace(" ", "_")
+        aprendizaje = input("\t\t Ingresa el tipo de apredizaje que tiene:\n")
+        borrar(db,profesor,Clase,aprendizaje)
+        print("\t\t Se ha borrado con exito") 
         
     elif (opcion == "3"):
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print("+\t\t ¿Desea eliminar un \n 1. Profesor \n 2. Clase?")
-        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        # Verificar si esta y luego alv jajaja
-        opcion = input("\t\t")
-        
-        while ((int(opcion) > 2) or (int(opcion) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            opcion = input("\t\t")
-        if(opcion == "1"):
-            profesor = input("\t\t Ingresa el nombre del profesor:\n")
-            eliminar_pro = driver.find_one("User","name", profesor)
-            eliminar_pro.delete()
-        elif(opcion == "2"):
-            clase = input("\t\t Ingresa el nombre del curso:\n")
-            eliminar_clase = driver.find_one("user","name", clase)
-            eliminar_clase.delete()
-        
-    elif (opcion == "4"):
-        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
-        print("+\t\t ¿Desea agregar un \n 1. Profesor \n 2. Clase?")
-        print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         # Verificar si no esta y luego que se venga papi jajaja
-        opcion = input("\t\t")
-        
-        while ((int(opcion) > 2) or (int(opcion) < 1 )):
-            print("+\t\tIngrese una opcion valida")
-            opcion = input("\t\t")
-        if(opcion == "1"):
-            profesor = input("\t\t Ingresa el nombre del profesor:\n")
-            print(create_person(driver,profesor))
-        elif(opcion == "2"):
-            clase = input("\t\t Ingresa el nombre del curso:\n")
-            print(create_person(driver,clase))
-        
-        
+        profesor = input("\t\t Ingresa el nombre del profesor:\n")
+        clase = input("\t\t Ingresa el nombre del curso que imparte:\n")    
+        aprendizaje = input("\t\t Ingresa el tipo de apredizaje que tiene:\n")
+        crear(db,profesor,clase,aprendizaje)
+        print("\t\t Se ha agregado con exito")
+    elif (opcion == "4"):
+        profes = mostrarProfesores(db)
+        for i in range(len(profes)):
+            print(profes[i])
     elif (opcion == "5"):
+        close(db)
         test = False
         print("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
         print("+\t\t Esperemos te haya servido, suerte en tu proximo semestre!")
